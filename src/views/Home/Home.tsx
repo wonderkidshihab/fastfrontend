@@ -1,5 +1,5 @@
 import Categories from "./Sections/Categories";
-import Navbar from "./Sections/Navbar";
+import Navbar from "../../widgets/Navbar";
 import Products from "./Sections/Products";
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
         <Categories />
         <Products />
         </>
-    );
+    )
 }
 
 export default Home;

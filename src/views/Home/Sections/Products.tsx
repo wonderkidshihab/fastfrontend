@@ -7,7 +7,7 @@ export default function Products() {
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string>("");
     useEffect(() => {
-        ApiClient.get("/product").then((response) => {
+        ApiClient.get("/product/").then((response) => {
             setProducts(response.data);
         }).catch((error) => {
             setError(error.message);
@@ -30,6 +30,8 @@ export default function Products() {
                         <div className="bg-white rounded shadow">
                             <div className="p-4">
                                 <h5 className="font-bold uppercase text-gray-600">{product.name}</h5>
+                                <img src={product.thumbnail} alt={product.name} />
+                                <h6 className="text-xl font-bold text-gray-700">${product.price}</h6>
                             </div>
                         </div>
                     </Link>

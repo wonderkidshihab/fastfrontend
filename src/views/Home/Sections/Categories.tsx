@@ -8,7 +8,7 @@ export default function Categories() {
     const [categories, setCategories] = useState<Category[]>([]);
     const [error, setError] = useState<string>("");
     useEffect(() => {
-        ApiClient.get("/category").then((response) => {
+        ApiClient.get("/category/").then((response) => {
             setCategories(response.data);
         }).catch((error) => {
             setError(error.message);
@@ -16,7 +16,7 @@ export default function Categories() {
         );
     }, []);
 
-    if(categories.length === 0) {
+    if(categories.length === 0 && error === "") {
         return <div>Loading...</div>
     }
     if (error) {
