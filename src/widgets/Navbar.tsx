@@ -1,5 +1,7 @@
 // use tailwindcss
 
+import { Link } from "react-router-dom";
+
 function Navbar() {
     return (
         <div className="flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-blue-500 mb-3">
@@ -32,9 +34,9 @@ function Navbar() {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+                            <Link className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" to="/login">
                                 <p>Sign In</p>
-                            </a>
+                            </Link>
                         </li>
                         
                     </ul>

@@ -90,6 +90,36 @@ function ProductPage() {
                 </div>
             </div>
         </div>
+            </div>
+            {/* Slider of Product images */}
+            {
+                (product?.images.length ?? 0) > 0 && (
+                    <div className="container mx-auto px-6 py-8">
+                    <h3 className="text-gray-700 text-2xl font-medium">Product Images</h3>
+                    <div className="mt-4">
+                        <div className="flex flex-wrap -mx-6">
+                            {
+                                product?.images.map((image) => (
+                                    <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 px-6 py-3" key={image}>
+                                        <div className="bg-gray-100 rounded-md p-5">
+                                            <img className="h-40 rounded-md w-full object-cover mx-auto" src={image} alt={product?.name} />
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                                </div>
+                            </div>
+                        </div>
+                )
+            }
+    {/* Product description */}
+    <div className="container mx-auto px-6 py-8">
+        <div className="md:flex md:items-center">
+            <div className="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
+                <h3 className="text-gray-700 uppercase text-lg">Description</h3>
+                <p className="mt-2 text-gray-600">{product?.description}</p>
+            </div>
+        </div>
     </div>
     </>
   );
